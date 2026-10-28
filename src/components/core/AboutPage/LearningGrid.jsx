@@ -8,7 +8,7 @@ const LearningGridArray = [
       heading: "World-Class Learning for",
       highlightText: "Anyone, Anywhere",
       description:
-        "Studynotion partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+        "EduPulse partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
       BtnText: "Learn More",
       BtnLink: "/",
     },
@@ -16,31 +16,31 @@ const LearningGridArray = [
       order: 1,
       heading: "Curriculum Based on Industry Needs",
       description:
-        "Save time and money! The Belajar curriculum is made to be easier to understand and in line with industry needs.",
+        "Save time and money! The EduPulse curriculum is designed to be crystal clear, practical, and aligned directly with modern tech industry requirements.",
     },
     {
       order: 2,
       heading: "Our Learning Methods",
       description:
-        "Studynotion partners with more than 275+ leading universities and companies to bring",
+        "Interactive video lectures, live problem-solving, hands-on coding challenges, and AI-assisted doubt resolution built directly into your browser.",
     },
     {
       order: 3,
       heading: "Certification",
       description:
-        "Studynotion partners with more than 275+ leading universities and companies to bring",
+        "Earn industry-recognized, verifiable certificates upon course completion to showcase your accomplishments directly on LinkedIn and your resume.",
     },
     {
       order: 4,
-      heading: `Rating "Auto-grading"`,
+      heading: `Automated Assessment`,
       description:
-        "Studynotion partners with more than 275+ leading universities and companies to bring",
+        "Instant code evaluation, instant feedback, and continuous progress metrics to keep you laser-focused on mastery.",
     },
     {
       order: 5,
       heading: "Ready to Work",
       description:
-        "Studynotion partners with more than 275+ leading universities and companies to bring",
+        "Graduate with an impressive project portfolio and real-world skills that hiring managers and recruiters actively look for.",
     },
   ];
 

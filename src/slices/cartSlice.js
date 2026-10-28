@@ -1,36 +1,77 @@
-import { createSlice } from "@reduxjs/toolkit";
-import {toast} from 'react-hot-toast'
+import { createSlice } from "@reduxjs/toolkit"
+import { toast } from "react-hot-toast"
 
-const initialState=({
-    totalItems:localStorage.getItem('totalItems')?JSON.parse(localStorage.get('totalItems')):0,
-    cart: localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")):[],
-    total: localStorage.getItem("total") ? JSON.parse(localStorage.getItem("total")):0
+const getStoredJSON = (key, fallback) => {
+  try {
+    const val = localStorage.getItem(key)
+    return val ? JSON.parse(val) : fallback
+  } catch (err) {
+    return fallback
+  }
+}
+
+const initialState = {
+  cart: getStoredJSON("cart", []),
+  total: getStoredJSON("total", 0),
+  totalItems: getStoredJSON("totalItems", 0),
+}
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addToCart: (state, action) => {
+      const course = action.payload
+      const index = state.cart.findIndex((item) => item._id === course._id)
+
+      if (index >= 0) {
+        toast.error("Course is already in your cart")
+        return
+      }
+
+      state.cart.push(course)
+      state.totalItems++
+      state.total += Number(course.price || 0)
+
+      try {
+        localStorage.setItem("cart", JSON.stringify(state.cart))
+        localStorage.setItem("total", JSON.stringify(state.total))
+        localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
+      } catch (e) {}
+
+      toast.success("Course added to cart")
+    },
+    removeFromCart: (state, action) => {
+      const courseId = action.payload
+      const index = state.cart.findIndex((item) => item._id === courseId)
+
+      if (index >= 0) {
+        state.totalItems--
+        state.total -= Number(state.cart[index].price || 0)
+        state.cart.splice(index, 1)
+
+        try {
+          localStorage.setItem("cart", JSON.stringify(state.cart))
+          localStorage.setItem("total", JSON.stringify(state.total))
+          localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
+        } catch (e) {}
+
+        toast.success("Course removed from cart")
+      }
+    },
+    resetCart: (state) => {
+      state.cart = []
+      state.total = 0
+      state.totalItems = 0
+      try {
+        localStorage.removeItem("cart")
+        localStorage.removeItem("total")
+        localStorage.removeItem("totalItems")
+      } catch (e) {}
+    },
+  },
 })
 
+export const { addToCart, removeFromCart, resetCart } = cartSlice.actions
 
-const cartSlice=createSlice({
-    name:'cart',
-    initialState:initialState,
-    reducers:{
-        setTotalItems(state,value){
-            state.totalItems=value.payload;
-        },
-
-        // cart add item
-        // remove item
-        // reset cart item
-        resetCart(state){
-            state.cart=[]
-            state.total=0
-            state.totalItems=0
-             // Update to localstorage
-            localStorage.removeItem("cart")
-            localStorage.removeItem("total")
-            localStorage.removeItem("totalItems")
-        }
-    }
-});
-
-
-export const {setTotalItems,resetCart}=cartSlice.actions;
-export default cartSlice.reducer;
+export default cartSlice.reducer

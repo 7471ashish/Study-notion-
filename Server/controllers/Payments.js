@@ -302,7 +302,7 @@ exports.sendPaymentSuccessEmail = async (req,res) => {
 
 //             const emailResponse = await mailSender(
 //                                                     updatedStudent.email,
-//                                                     "Thankyou for buying - StudyNotion",
+//                                                     "Thankyou for buying - EduPulse",
 //                                                     "You have successfully bought Study Notion Course"
 //             )
 

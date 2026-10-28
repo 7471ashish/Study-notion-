@@ -22,7 +22,7 @@ const About = () => {
                 </div>
                 
                 
-                     <p className='text-center text-sm' >Studynotion is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.</p>
+                     <p className='text-center text-sm text-richblack-300 max-w-3xl leading-relaxed'>EduPulse is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.</p>
             </header>
             <div className='flex gap-4 absolute top-[90%]'>
                 <img src={BannerImage1} alt=""/>

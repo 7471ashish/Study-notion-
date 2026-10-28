@@ -2,8 +2,7 @@ import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
 
-// Images
-import Logo from "../../assets/Logo/Logo-Full-Light.png";
+import EduPulseLogo from "./EduPulseLogo";
 
 // Icons
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -30,7 +29,7 @@ const Footer = () => {
           {/* Section 1 */}
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-[#2C333F] pl-3 lg:pr-5 gap-3">
             <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
-              <img src={Logo} alt="" className="object-contain" />
+              <EduPulseLogo size="md" />
               <h1 className="text-[#C5C7D4] font-semibold text-[16px]">
                 Company
               </h1>
@@ -172,7 +171,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="text-center">Made with ❤️ CodeHelp © 2023 Studynotion</div>
+          <div className="text-center text-xs text-richblack-400">© 2026 EduPulse Platform. All rights reserved.</div>
         </div>
       </div>
     </div>

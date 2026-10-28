@@ -1,9 +1,205 @@
-@import "tailwindcss";
-
-html,body{
+html,
+body {
   overflow-x: hidden;
+  background-color: #000814;
+  color: #f1f2ff;
+  font-family: 'Inter', sans-serif;
 }
 
-.homepage_bg{
-   background: url("../src/assets/Images/bghome.svg");
+/* Custom Sleek Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #424854 #000814;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000814;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #424854;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #6e727f;
+}
+
+/* Hide default styling of details/summary */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Spinner */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 5px solid #2c333f;
+  border-top-color: #ffd60a;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Codeblocks Background Glows */
+.codeblock1 {
+  position: absolute;
+  width: 372.95px;
+  height: 257.05px;
+  border-radius: 100%;
+  left: calc(50% - 372.95px / 2 - 76.53px);
+  top: calc(50% - 257.05px / 2 - 47.47px);
+  background: linear-gradient(
+    123.77deg,
+    #8a2be2 -6.46%,
+    #ffa500 59.04%,
+    #f8f8ff 124.53%
+  );
+  opacity: 0.2;
+  filter: blur(34px);
+  transform: matrix(1, 0, -0.03, 1, 0, 0);
+  pointer-events: none;
+}
+
+.codeblock2 {
+  position: absolute;
+  width: 372.95px;
+  height: 257.05px;
+  left: calc(50% - 372.95px / 2 - 76.53px);
+  top: calc(50% - 257.05px / 2 - 47.47px);
+  border-radius: 100%;
+  background: linear-gradient(
+    118.19deg,
+    #1fa2ff -3.62%,
+    #12d8fa 50.44%,
+    #a6ffcb 104.51%
+  );
+  opacity: 0.2;
+  filter: blur(34px);
+  transform: matrix(1, 0, -0.03, 1, 0, 0);
+  pointer-events: none;
+}
+
+.code-border {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(
+    111.93deg,
+    rgba(14, 26, 45, 0.4) -1.4%,
+    rgba(17, 30, 50, 0.6) 104.96%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.homepage_bg {
+  background: url("/src/assets/Images/bghome.svg");
+  background-position: center;
+  background-repeat: repeat;
+}
+
+/* Interactive Utility Classes */
+.yellowButton {
+  cursor: pointer;
+  border-radius: 0.75rem;
+  background-color: #ffd60a;
+  padding: 0.625rem 1.25rem;
+  font-weight: 700;
+  color: #000814;
+  box-shadow: 0 4px 14px 0 rgba(255, 214, 10, 0.25);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.yellowButton:hover {
+  background-color: #ffe83d;
+  box-shadow: 0 6px 20px 0 rgba(255, 214, 10, 0.35);
+  transform: translateY(-1px);
+}
+
+.yellowButton:active {
+  transform: scale(0.98);
+}
+
+.blackButton {
+  cursor: pointer;
+  border-radius: 0.75rem;
+  background-color: #161d29;
+  border: 1px solid #2c333f;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  color: #f1f2ff;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.blackButton:hover {
+  background-color: #222936;
+  border-color: #424854;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.blackButton:active {
+  transform: scale(0.98);
+}
+
+.lable-style {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #dbddea;
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+.form-style {
+  width: 100%;
+  border-radius: 0.75rem;
+  background-color: #2c333f;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #f1f2ff;
+  border: 1px solid #424854;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-style:focus {
+  border-color: #ffd60a;
+  box-shadow: 0 0 0 2px rgba(255, 214, 10, 0.2);
+}
+
+.form-style::placeholder {
+  color: #838894;
+}
+
+.section_heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #f1f2ff;
+}
+
+@media (min-width: 1024px) {
+  .section_heading {
+    font-size: 2.25rem;
+  }
 }

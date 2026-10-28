@@ -25,17 +25,17 @@ const ExploreMore = () => {
         <HighlightText text="Power of Code"></HighlightText>
        </div>
 
-       <p className='text-center text-[#838894] text-md mt-3'>
-        Learn to buil anything you can imagine
+       <p className='text-center text-richblack-300 text-base mt-2 max-w-lg'>
+        Learn to build anything you can imagine with structured pathways.
        </p>
 
-       <div className='flex flex-row rounded-full bg-[#161D29] mb-5 px-1 py-1 w-fit mt-3'>
+       <div className='flex flex-wrap items-center justify-center rounded-full bg-richblack-800/90 border border-richblack-700/80 p-1.5 w-fit mt-6 backdrop-blur-sm shadow-xl shadow-black/20'>
         {
             tabsName.map((element,index)=>{
                 return(
-                   <div className={`text-[16px] flex flex-row items-center gap-2
-                   ${currentTab===element?'bg-[#000814] text-[#F1F2FF] font-medium':'text-[#999DAA]'}
-                   rounded-full transition-all duration-200 cursor-pointer hover:bg-[#000814] hover:text-[#F1F2FF] px-7 py-2  `} key={index} onClick={()=>setMyCards(element)}>
+                   <div className={`text-sm sm:text-base flex flex-row items-center gap-2
+                   ${currentTab===element?'bg-richblack-900 text-richblack-5 font-semibold shadow-sm border border-richblack-700/60':'text-richblack-300'}
+                   rounded-full transition-all duration-200 cursor-pointer hover:bg-richblack-900/60 hover:text-white px-5 sm:px-7 py-2`} key={index} onClick={()=>setMyCards(element)}>
                     {element}
                    </div>
                 )
